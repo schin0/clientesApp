@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\schin\\source\\repos\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj": {}
+    "C:\\Users\\schin\\source\\repos\\clientesApp\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\schin\\source\\repos\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj": {
+    "C:\\Users\\schin\\source\\repos\\clientesApp\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\schin\\source\\repos\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\schin\\source\\repos\\clientesApp\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj",
         "projectName": "Clientes.WebAPI",
-        "projectPath": "C:\\Users\\schin\\source\\repos\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj",
+        "projectPath": "C:\\Users\\schin\\source\\repos\\clientesApp\\Clientes.WebAPI\\Clientes.WebAPI\\Clientes.WebAPI.csproj",
         "packagesPath": "C:\\Users\\schin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\schin\\source\\repos\\Clientes.WebAPI\\Clientes.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\schin\\source\\repos\\clientesApp\\Clientes.WebAPI\\Clientes.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
