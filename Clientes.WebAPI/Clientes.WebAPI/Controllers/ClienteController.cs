@@ -22,7 +22,7 @@ namespace Clientes.WebAPI.Controllers
         [HttpGet("{id}")]
         public Task<Model.Cliente> Get(string id)
         {
-            return _cliente.GetCliente(id);
+            return _cliente.GetClienteId(id);
         }
         [HttpPost]
         public string Post([FromBody] Model.Cliente cliente) => _cliente.AddCliente(cliente);
@@ -34,7 +34,7 @@ namespace Clientes.WebAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(string id)
         {
-            _cliente.ExcluirCliente(id);
+            _cliente.DeleteCliente(id);
         }
     }
 }
