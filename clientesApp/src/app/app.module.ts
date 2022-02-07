@@ -11,6 +11,21 @@ import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { ExcluirComponent } from './components/excluir/excluir.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { VisualizarComponent } from './components/visualizar/visualizar.component';
+import { InicioComponent } from './views/inicio/inicio.component';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,12 +36,26 @@ import { VisualizarComponent } from './components/visualizar/visualizar.componen
     CadastrarComponent,
     ExcluirComponent,
     EditarComponent,
-    VisualizarComponent
+    VisualizarComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    MatInputModule,
+    NgxMaskModule.forRoot(),
+    MatSelectModule,
+    FormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
