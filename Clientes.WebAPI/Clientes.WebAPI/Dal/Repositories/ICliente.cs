@@ -5,7 +5,7 @@
         Task<List<Model.Cliente>> GetClientes();
         string AddCliente(Model.Cliente cliente);
         void EditarCliente(Model.Cliente cliente);
-        Task<Model.Cliente> GetCliente(string id);
-        void ExcluirCliente(string id);
+        Task<Model.Cliente> GetClienteId(string id);
+        void DeleteCliente(string id);
     }
 }
