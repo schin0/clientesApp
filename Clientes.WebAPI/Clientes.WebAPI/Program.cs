@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddTransient<ICliente, Cliente>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,10 +31,10 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseCors(x => x
-    .AllowAnyMethod()
-    .AllowAnyHeader()
-    .SetIsOriginAllowed(origin => true) // allow any origin
-    .AllowCredentials());
+.AllowAnyMethod()
+.AllowAnyHeader()
+.SetIsOriginAllowed(origin => true) // allow any origin
+.AllowCredentials());
 
 app.UseRouting();
 
@@ -41,7 +42,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{Id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 
