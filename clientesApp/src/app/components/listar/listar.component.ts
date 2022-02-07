@@ -1,3 +1,6 @@
+import { Cliente } from './../../shared/interfaces/ICliente';
+import { ClientesService } from './../../shared/clientes.service';
+import { HeaderService } from './../../shared/header/header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  clientes: Array<Cliente> = [];
+  displayedColumns = ['nome', 'sobrenome', 'cpf', 'id', 'dataNascimento', 'idade', 'profissao', 'visualizar', 'editar', 'deletar'];
 
-  ngOnInit(): void {
+  constructor(private headerService: HeaderService,
+    private clienteService: ClientesService) {
+    headerService.headerData = {
+      title: "Clientes",
+      icon: "people",
+      routeUrl: "/listar"
+    }
   }
 
+  ngOnInit(): void {
+    this.clienteService.listarClientes().subscribe(clientes => this.clientes = clientes);
+  }
 }
