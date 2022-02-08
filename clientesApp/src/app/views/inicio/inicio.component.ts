@@ -16,6 +16,8 @@ export class InicioComponent implements OnInit {
     }
   }
 
+  panelOpenState = false;
+
   ngOnInit(): void {
   }
 
