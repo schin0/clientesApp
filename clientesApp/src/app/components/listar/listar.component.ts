@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListarComponent implements OnInit {
 
   clientes: Array<Cliente> = [];
-  displayedColumns = ['nome', 'sobrenome', 'cpf', 'id', 'dataNascimento', 'idade', 'profissao', 'visualizar', 'editar', 'deletar'];
+  displayedColumns = ['nome', 'sobrenome', 'cpf', 'id', 'dataNascimento', 'idade', 'profissao', 'acoes'];
 
   constructor(private headerService: HeaderService,
     private clienteService: ClientesService) {

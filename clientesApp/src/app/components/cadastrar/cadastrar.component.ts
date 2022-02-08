@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MensagemService } from './../../shared/mensagem/mensagem.service';
 import { Cliente } from './../../shared/interfaces/ICliente';
 import { ClientesService } from './../../shared/clientes.service';
@@ -23,7 +24,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(private headerService: HeaderService,
     private clientesService: ClientesService,
-    private mensageService: MensagemService) {
+    private mensageService: MensagemService,
+    private router: Router) {
     headerService.headerData = {
       title: "Cadastrar",
       icon: "add",
@@ -73,7 +75,7 @@ export class CadastrarComponent implements OnInit {
       idade--;
     }
     if (idade <= 0) {
-      this.mensageService.mostrar('Insira uma data válida!');
+      this.mensageService.mostrar('Insira uma data válida!', true);
     } else {
       this.objValues.idade = idade;
       this.objValues.dataNascimento = dataFormatada;
@@ -91,5 +93,22 @@ export class CadastrarComponent implements OnInit {
       this.objValues.profissao,
       this.mensageService.mostrar('Cliente cadastrado com sucesso!')
     );
+    this.limpar();
+  }
+
+  limpar(): void {
+    this.objValues = {
+      "nome": '',
+      "sobrenome": '',
+      "cpf": '',
+      "dataNascimento": '',
+      "idade": 0,
+      "profissao": ''
+    }
+  }
+
+  cancelar(): void {
+    this.router.navigate(['/']);
+    this.limpar();
   }
 }
