@@ -34,6 +34,24 @@ export class ClientesService {
     );
   };
 
+  buscarPeloId(id: string): Observable<Cliente> {
+    const urlNova = `${this.url}/cliente/${id}`;
+    return this.http.get<Cliente>(urlNova);
+  }
+
+  editar(cliente: Cliente): Observable<Cliente> {
+    const urlNova = `${this.url}/cliente`;
+    return this.http.put<Cliente>(urlNova, cliente)
+  }
+
+  excluir(id: string): Observable<Cliente> {
+    const urlNova = `${this.url}/cliente/${id}`;
+    return this.http.delete<Cliente>(urlNova).pipe(
+      retry(2),
+      catchError(this.manipulaErro)
+    );
+  }
+
   manipulaErro(error: HttpErrorResponse) {
     let mensagemErro = '';
     if (error.error instanceof ErrorEvent) {
