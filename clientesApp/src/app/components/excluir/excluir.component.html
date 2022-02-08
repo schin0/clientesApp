@@ -1,31 +1,48 @@
-<h1>Confirmar exclusão de cliente</h1>
-<form class="form">
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="objValues.nome" name="Nome" readonly>
-  </mat-form-field>
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Sobrenome</mat-label>
-    <input matInput [(ngModel)]="objValues.sobrenome" name="Sobrenome" readonly>
-  </mat-form-field>
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>CPF</mat-label>
-    <input matInput mask="000.000.000-00" [(ngModel)]="objValues.cpf" name="Cpf" readonly>
-  </mat-form-field>
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Data de nascimento</mat-label>
-    <input type="date" matInput [(ngModel)]="objValues.dataNascimento" name="Data de Nacimento" readonly>
-  </mat-form-field>
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Profissão</mat-label>
-    <mat-select [(ngModel)]="objValues.profissao" name="Profissão" readonly>
-      <mat-option value="Programador">Programador</mat-option>
-      <mat-option value="Analista">Analista</mat-option>
-      <mat-option value="Gerente">Gerente</mat-option>
-      <mat-option value="Estagiário">Estagiário</mat-option>
-      <mat-option value="QA">QA</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="excluir()">Excluir</button>
-  <button mat-raised-button color="primary" (click)="cancel()">Cancelar</button>
-</form>
+<h1>Confirma a exclusão do cliente {{ objValues.nome }}?</h1>
+<section>
+  <form class="form">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="objValues.id" name="Id" readonly>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput #nome maxlength="30" placeholder="Ex.: Gabriel" [(ngModel)]="objValues.nome" name="Nome" readonly>
+      <mat-hint align="end">{{nome.value.length}} / 30</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput #sobrenome maxlength="100" placeholder="Ex.: Schincariol" [(ngModel)]="objValues.sobrenome"
+        name="Sobrenome" readonly>
+      <mat-hint align="end">{{sobrenome.value.length}} / 100</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>CPF</mat-label>
+      <input matInput mask="000.000.000-00" [(ngModel)]="objValues.cpf" name="Cpf" readonly>
+    </mat-form-field>
+    <div id="divInfo">
+      <mat-form-field class="full-width" appearance="fill" id="dataNascimento">
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [(ngModel)]="objValues.dataNascimento" name="Data de Nacimento" readonly>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill" id="idade">
+        <mat-label>Idade</mat-label>
+        <input matInput [(ngModel)]="objValues.idade" name="Idade" readonly>
+      </mat-form-field>
+    </div>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Profissão</mat-label>
+      <mat-select [(ngModel)]="objValues.profissao" name="Profissão" readonly>
+        <mat-option value="Programador">Programador</mat-option>
+        <mat-option value="Analista">Analista</mat-option>
+        <mat-option value="Gerente">Gerente</mat-option>
+        <mat-option value="Estagiário">Estagiário</mat-option>
+        <mat-option value="QA">QA</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div id="divBtns">
+      <button mat-raised-button (click)="cancel()" id="btnCancelar">Cancelar</button>
+      <button mat-raised-button (click)="excluir()" id="btnExcluir">Excluir</button>
+    </div>
+  </form>
+</section>
