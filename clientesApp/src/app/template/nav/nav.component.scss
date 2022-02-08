@@ -1,9 +1,10 @@
 .nav {
-  background-color: red;
+  background: rgb(116,61,116);
+  background: linear-gradient(0deg, rgba(116,61,116,1) 0%, rgba(184,126,187,1) 100%);
   width: 200px;
   .item i {
     margin-right: 10px;
-    color: #000;
+    color: #fff;
   }
 }
 .content {

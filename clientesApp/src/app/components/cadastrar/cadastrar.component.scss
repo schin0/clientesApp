@@ -1,9 +1,40 @@
-.form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+h1 {
+  text-align: center;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    .form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    .full-width {
+      width: 100%;
+    }
+    #divBtns {
+      display: flex;
+      justify-content: space-around;
+        #btnCadastrar {
+          background-color: var(--roxo);
+          color: white;
+        }
+        #btnCadastrar:hover {
+          box-shadow: 0px 0px 10px var(--roxo-claro);
+        }
+        #btnCancelar {
+          background-color: var(--terracota);
+          color: white;
+        }
+        #btnCancelar:hover {
+          box-shadow: 0px 0px 10px var(--vermelho);
+        }
+    }
+  }
 }
 
-.full-width {
-  width: 100%;
+@media (max-width: 605px) {
+  h1, section {
+    margin-top: 3vh;
+  }
 }

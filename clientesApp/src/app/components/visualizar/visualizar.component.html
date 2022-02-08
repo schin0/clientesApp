@@ -1,1 +1,29 @@
-<p>visualizar works!</p>
+<h1>Visualização de cliente</h1>
+<form class="form">
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="objValues.nome" name="Nome" readonly>
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput [(ngModel)]="objValues.sobrenome" name="Sobrenome" readonly>
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>CPF</mat-label>
+    <input matInput mask="000.000.000-00" [(ngModel)]="objValues.cpf" name="Cpf" readonly>
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Data de nascimento</mat-label>
+    <input type="date" matInput [(ngModel)]="objValues.dataNascimento" name="Data de Nacimento" readonly>
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Profissão</mat-label>
+    <mat-select [(ngModel)]="objValues.profissao" name="Profissão" readonly>
+      <mat-option value="Programador">Programador</mat-option>
+      <mat-option value="Analista">Analista</mat-option>
+      <mat-option value="Gerente">Gerente</mat-option>
+      <mat-option value="Estagiário">Estagiário</mat-option>
+      <mat-option value="QA">QA</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
