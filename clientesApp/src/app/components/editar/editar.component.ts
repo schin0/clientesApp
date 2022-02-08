@@ -33,7 +33,9 @@ export class EditarComponent implements OnInit {
   editarCliente(): void {
     this.clienteService.editar(this.objValues).subscribe(() => {
       this.mensagem.mostrar('Cliente atualizado com sucesso!');
-      this.router.navigate(['/listar']);
+      setTimeout(() => {
+        this.router.navigate(['/listar']);
+      }, 1500);
     })
   }
 

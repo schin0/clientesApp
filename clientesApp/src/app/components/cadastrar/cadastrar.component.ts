@@ -94,6 +94,9 @@ export class CadastrarComponent implements OnInit {
       this.mensageService.mostrar('Cliente cadastrado com sucesso!')
     );
     this.limpar();
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 1500);
   }
 
   limpar(): void {

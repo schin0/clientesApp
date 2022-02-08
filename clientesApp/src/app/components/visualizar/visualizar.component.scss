@@ -1,0 +1,31 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  .card {
+    width: 550px;
+    margin-bottom: 8px;
+    #secInfo {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    mat-expansion-panel {
+      margin: 2vh 1vw !important;
+      background-color: var(--roxo-claro);
+    }
+    .panel {
+      width: 250px;
+    }
+  }
+}
+
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}

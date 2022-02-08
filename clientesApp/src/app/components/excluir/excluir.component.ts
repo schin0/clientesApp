@@ -32,7 +32,9 @@ export class ExcluirComponent implements OnInit {
   excluir(): void {
     this.clienteService.excluir(`${this.objValues.id}`).subscribe(() => {
       this.mensagem.mostrar('Cliente excluído com sucesso!');
-      this.router.navigate(['/listar']);
+      setTimeout(() => {
+        this.router.navigate(['/listar']);
+      }, 1500);
     })
   }
 

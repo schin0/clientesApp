@@ -1,8 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientesService } from './../../shared/clientes.service';
-import { MensagemService } from './../../shared/mensagem/mensagem.service';
 import { Cliente } from './../../shared/interfaces/ICliente';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-visualizar',
@@ -18,8 +17,9 @@ export class VisualizarComponent implements OnInit {
     "idade": 0,
     "profissao": ''
   }
+
   constructor(private clienteService: ClientesService, private router: Router,
-    private route: ActivatedRoute, private mensagem: MensagemService) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params["id"];
@@ -28,4 +28,9 @@ export class VisualizarComponent implements OnInit {
     });
   }
 
+  panelOpenState = false;
+
+  voltar(): void {
+    this.router.navigate(['/listar']);
+  }
 }
