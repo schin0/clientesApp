@@ -37,3 +37,15 @@ table {
     }
   }
 }
+
+
+
+@media (max-width: 920px) {
+  .acao1, .acao2, .acao3, .btn1, .btn2, .btn3 {
+    padding: 0 5px !important;
+  }
+  #columnAcao {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+}

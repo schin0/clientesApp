@@ -15,4 +15,18 @@
       color: #fff;
     }
   }
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .icone {
+    display: none;
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .icone {
+    display: block !important;
+  }
 }

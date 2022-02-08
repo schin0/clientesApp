@@ -30,24 +30,24 @@
       <th mat-header-cell *matHeaderCellDef> Profissão </th>
       <td mat-cell *matCellDef="let row"> {{row.profissao}} </td>
     </ng-container>
-    <ng-container matColumnDef="acoes">
+    <ng-container matColumnDef="acoes" id="columnAcao">
       <th mat-header-cell *matHeaderCellDef> Visualizar </th>
       <td mat-cell *matCellDef="let row">
-        <button mat-button class="btns icon">
+        <button mat-button class="btns icon btn1">
           <a routerLink="/visualizar/{{ row.id }}" class="linkProduto acao1">
             <i class="material-icons iconView">
               visibility
             </i>
           </a>
         </button>
-        <button mat-button class="btns icon">
+        <button mat-button class="btns icon btn2">
           <a routerLink="/editar/{{ row.id }}" class="linkProduto acao2">
             <i class="material-icons iconView">
               edit
             </i>
           </a>
         </button>
-        <button mat-button class="btns icon">
+        <button mat-button class="btns icon btn3">
           <a routerLink="/excluir/{{ row.id }}" class="linkProduto acao3">
             <i class="material-icons iconView">
               delete
