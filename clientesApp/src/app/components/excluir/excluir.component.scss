@@ -44,4 +44,7 @@ section {
   h1, section {
     margin-top: 3vh;
   }
+  #divInfo {
+    flex-direction: column !important;
+  }
 }

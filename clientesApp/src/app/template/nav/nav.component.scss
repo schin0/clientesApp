@@ -12,3 +12,9 @@
   background-color: #fff;
   color: black;
 }
+
+@media (max-width: 1120px) {
+  .nav {
+    display: none;
+  }
+}

@@ -1,4 +1,60 @@
 <mat-card class="inicio mat-elevation-z3">
   <mat-card-title class="title">Bem vindo!</mat-card-title>
   <mat-card-subtitle class="subtitle">Esse é um sistema de cadastro de clientes.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Tecnologias usadas no desenvolvimento
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>A aplicação SPA tem como objetivo cadastrar clientes, assim como outras funções de um CRUD. A seguir temos as
+          tecnologias utilizadas:</p>
+        <div id="lista">
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="front">Angular 13</mat-list-item>
+            <mat-list-item role="listitem" class="front">HTML</mat-list-item>
+            <mat-list-item role="listitem" class="front">CSS/SCSS</mat-list-item>
+            <mat-list-item role="listitem" class="front">Angular Material</mat-list-item>
+          </mat-list>
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="back">C#</mat-list-item>
+            <mat-list-item role="listitem" class="back">.NET 6.0</mat-list-item>
+          </mat-list>
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="banco">Firebase</mat-list-item>
+          </mat-list>
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="documentacao">Swagger</mat-list-item>
+          </mat-list>
+        </div>
+        <br>
+        <p>Escolhi essas linguagens por ter uma base de conhecimento consolidada, juntamente com a experiência nas
+          mesmas.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel"
+        id="bibliotecas">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Bibliotecas
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Usei algumas bibliotecas para agilizar estilizações e funcionamentos em geral. Suas documentações estão a
+          seguir:</p>
+        <ul>
+          <li>
+            <a href="https://material.angular.io" target="_blank" class="links">Angular Material </a>(Estilização);
+          </li>
+          <li>
+            <a href="https://www.npmjs.com/package/ngx-mask" target="_blank" class="links">ngx-mask </a>(Formatação de
+            CPF);
+          </li>
+          <li>
+            <a href="https://momentjs.com" target="_blank" class="links">Moment js </a> (Formatação de Datas)
+          </li>
+        </ul>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
 </mat-card>

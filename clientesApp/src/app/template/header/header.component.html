@@ -9,4 +9,28 @@
       {{ title }}
     </a>
   </span>
+  <div class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="icone" aria-label="Example icon-button with a menu">
+      <i class="material-icons logo vertical-meio">
+        menu
+      </i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <a class="item" routerLink="/"
+          style="text-decoration: none !important; color: var(--roxo) !important;">Início</a>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>people</mat-icon>
+        <a class="item" routerLink="/listar"
+          style="text-decoration: none !important; color: var(--roxo) !important;">Clientes</a>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>add</mat-icon>
+        <a class="item" routerLink="/cadastrar"
+          style="text-decoration: none !important; color: var(--roxo) !important;">Cadastrar</a>
+      </button>
+    </mat-menu>
+  </div>
 </mat-toolbar>
