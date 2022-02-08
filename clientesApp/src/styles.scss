@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --roxo: #743D74;
+  --roxo-claro: #B87EBB;
+  --amarelo: #EDAB15;
+  --terracota: #DC503F;
+  --marrom: #190A0C;
+  --vermelho: #F44336;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -9,6 +17,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .msg-error {
-  background-color: red;
+  background-color: var(--vermelho);
   color: white;
 }
