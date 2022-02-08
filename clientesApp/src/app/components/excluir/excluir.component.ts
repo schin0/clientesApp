@@ -1,3 +1,7 @@
+import { Cliente } from './../../shared/interfaces/ICliente';
+import { MensagemService } from './../../shared/mensagem/mensagem.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ClientesService } from './../../shared/clientes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +10,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./excluir.component.scss']
 })
 export class ExcluirComponent implements OnInit {
+  objValues: Cliente = {
+    "nome": '',
+    "sobrenome": '',
+    "cpf": '',
+    "dataNascimento": '',
+    "idade": 0,
+    "profissao": ''
+  }
 
-  constructor() { }
+  constructor(private clienteService: ClientesService, private router: Router,
+    private route: ActivatedRoute, private mensagem: MensagemService) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.params["id"];
+    this.clienteService.buscarPeloId(id).subscribe(dados => {
+      this.objValues = dados;
+    });
+  }
+
+  excluir(): void {
+    this.clienteService.excluir(`${this.objValues.id}`).subscribe(() => {
+      this.mensagem.mostrar('Cliente excluído com sucesso!');
+      this.router.navigate(['/listar']);
+    })
+  }
+
+  cancel(): void {
+    this.router.navigate(['/listar']);
   }
 
 }
